@@ -9,7 +9,9 @@ namespace Assignment._6
 {
     internal struct DeliveryCenter
     {
-        private Shipment[]shipments;
+        private Shipment[]shipments=new Shipment[10];
+        public DeliveryCenter()
+        { }
         public Shipment this[int index]
         {
             get 

@@ -28,6 +28,46 @@
             //Console.WriteLine(address1.GetFullAddress());
             //Console.WriteLine(address2.GetFullAddress());
             #endregion
+            DeliveryCenter deliveryCenter = new DeliveryCenter();
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine($"Enter Shipment{i + 1} Data:");
+                Console.Write("Tracking Code:");
+                string code = Console.ReadLine();
+                Console.Write("Description:");
+                string description = Console.ReadLine();
+                Console.Write("Weight:");
+                double weigh = double.Parse(Console.ReadLine());
+                Console.Write("Delivery Fee:");
+                decimal fee = decimal.Parse(Console.ReadLine());
+                Console.Write("City:");
+                string city = Console.ReadLine();
+                Console.Write("Street:");
+                string street = Console.ReadLine();
+                Console.Write($"Building Number:");
+                int num = int.Parse(Console.ReadLine());
+                Shipment shipment = new Shipment(code, description, weigh, fee, new DeliveryAddress(city, street, num));
+                if (deliveryCenter.AddShipment(shipment))
+                { 
+                    Console.WriteLine("Shipment added successfully."); 
+                }
+            }
+            for (int j = 0; j < 3; j++)
+            {
+                Console.WriteLine("------All Shimpents-------");
+                deliveryCenter[j].PrintShipment();
+            }
+            Console.WriteLine("Enter a tracking code:");
+            string searchCode = Console.ReadLine();
+            Shipment foundCode = deliveryCenter[searchCode];
+            if (!string.IsNullOrWhiteSpace(foundCode.TrackingCode))
+            {
+                Console.WriteLine($"Found Code:{foundCode.TrackingCode} - {foundCode.Description}");
+            }
+            else 
+            { 
+                Console.WriteLine("Not Found!"); 
+            }
             #endregion
         }
     }
