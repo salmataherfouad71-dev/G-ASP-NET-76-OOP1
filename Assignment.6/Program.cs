@@ -19,6 +19,16 @@
                  and public property allow the validation on the input and set and get the values.*/
             #endregion
             #endregion
+            #region Part02
+            #region Delivery Address
+            //DeliveryAddress address1= new DeliveryAddress("Nasr City","Al-Swaf",15);
+            //DeliveryAddress address2 = new DeliveryAddress();
+            //address2= address1;
+            //address2.buildingNumber = 7;
+            //Console.WriteLine(address1.GetFullAddress());
+            //Console.WriteLine(address2.GetFullAddress());
+            #endregion
+            #endregion
         }
     }
 }
