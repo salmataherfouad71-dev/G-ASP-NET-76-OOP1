@@ -21,5 +21,9 @@ namespace Assignment._6
         {
             return $"City:{city}\nStreet:{street}\nBuilding Number:{buildingNumber}";
         }
+        public override string ToString()
+        {
+            return $"City:{city}\nStreet:{street}\nBuilding Number:{buildingNumber}";
+        }
     }
 }
